@@ -1,0 +1,12 @@
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\bin\Debug\console.exe.config
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\bin\Debug\console.exe
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\bin\Debug\console.pdb
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\bin\Debug\EntityFramework.dll
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\bin\Debug\EntityFramework.xml
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\obj\Debug\console.csprojAssemblyReference.cache
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\obj\Debug\console.csproj.CoreCompileInputs.cache
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\obj\Debug\console.csproj.CopyComplete
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\obj\Debug\console.exe
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\console\obj\Debug\console.pdb
