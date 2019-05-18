@@ -8,10 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace biblio.Mappings
-
-    /// <see cref="Offre"/>
+namespace biblio.Mappings 
 {
+    /// <see cref="Offre"/>
     class OffreFluent : EntityTypeConfiguration<Offre>
     {
         public OffreFluent()
@@ -23,15 +22,19 @@ namespace biblio.Mappings
                 .HasColumnName("IDOFFRE")
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
             Property(p => p.IntituleOffre)
                 .HasColumnName("INTITULEOFFRE")
                 .IsOptional();
+
             Property(p => p.DateOffre)
                 .HasColumnName("DATEOFFRE")
                 .IsOptional();
+
             Property(p => p.SalaireOffre)
                 .HasColumnName("SALAIREOFFRE")
                 .IsOptional();
+
             Property(p => p.DescriptionOffre)
                 .HasColumnName("DESCRIPTIONOFFRE")
                 .IsOptional();
@@ -39,6 +42,7 @@ namespace biblio.Mappings
             Property(p => p.IdStatutOffre)
                 .HasColumnName("IDSTATUTOFFRE")
                 .IsOptional();
+
             Property(p => p.ResponsableOffre)
                 .HasColumnName("RESPONSABLEOFFRE")
                 .IsOptional();
