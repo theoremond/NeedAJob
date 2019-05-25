@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>biblio</RootNamespace>
     <AssemblyName>biblio</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <PublishUrl>publish\</PublishUrl>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,7 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ContextFluent.cs" />
     <Compile Include="Entities\Offre.cs" />
+    <Compile Include="Mappings\ExperienceFluent.cs" />
+    <Compile Include="Mappings\FormationFluent.cs" />
+    <Compile Include="Mappings\PostulationFluent.cs" />
+    <Compile Include="Mappings\StatutFluent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mappings\EmployeFluent.cs" />
     <Compile Include="Entities\Employe.cs" />
@@ -109,8 +115,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mappings\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

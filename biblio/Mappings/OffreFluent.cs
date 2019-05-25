@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace biblio.Mappings 
 {
     /// <see cref="Offre"/>
-    class OffreFluent : EntityTypeConfiguration<Offre>
+    public class OffreFluent : EntityTypeConfiguration<Offre>
     {
         public OffreFluent()
         {

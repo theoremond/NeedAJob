@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace biblio.Entities
 {
-    class Offre
+    public class Offre
     {
         private int idOffre;
         private string intituleOffre;

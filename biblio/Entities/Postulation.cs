@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace biblio.Entities
 {
-    class Postulation
+    public class Postulation
     {
         private int idOffrePostulation;
         private int idEmployePostulation;

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace biblio.Mappings
 {
     /// <see cref="Employe"/> 
-    class EmployeFluent : EntityTypeConfiguration<Employe>
+    public class EmployeFluent : EntityTypeConfiguration<Employe>
     {
         public EmployeFluent()
         {

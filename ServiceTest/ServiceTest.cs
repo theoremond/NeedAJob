@@ -1,14 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace test
+namespace ServiceTest
 {
     [TestClass]
-    public class UnitTest1
+    public class ServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
-        {
+        public void TestAddEmploye()
+        {  
         }
     }
 }

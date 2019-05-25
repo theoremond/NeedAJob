@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace biblio.Entities
 {
-    class Statut
+    public class Statut
     {
         private int idStatut;
         private string libelle;

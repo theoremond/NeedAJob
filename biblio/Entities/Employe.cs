@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace biblio.Entities
 {
-    class Employe
+    public class Employe
     {
-        private int idEmploye;
-        private string nomEmploye;
-        private string prenomEmploye;
-        private DateTime dateDeNaissanceEmploye;
-        private int ancienneteEmploye;
-        private string biographieEmploye;
+        //private int idEmploye;
+        //private string nomEmploye;
+        //private string prenomEmploye;
+        //private DateTime dateDeNaissanceEmploye;
+        //private int ancienneteEmploye;
+        //private string biographieEmploye;
 
         public int IdEmploye { get => idEmploye; set => idEmploye = value; }
         public string NomEmploye { get => nomEmploye; set => nomEmploye = value; }
