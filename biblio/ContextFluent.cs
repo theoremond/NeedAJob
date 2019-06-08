@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,12 +21,14 @@ namespace biblio
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.HasDefaultSchema("dbo");
-            modelBuilder.Configurations.Add(new EmployeFluent());
+            /**modelBuilder.Configurations.Add(new EmployeFluent());
             modelBuilder.Configurations.Add(new ExperienceFluent());
             modelBuilder.Configurations.Add(new FormationFluent());
             modelBuilder.Configurations.Add(new OffreFluent());
             modelBuilder.Configurations.Add(new PostulationFluent());
             modelBuilder.Configurations.Add(new StatutFluent());
+            **/
+            modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         public DbSet<Employe> Employes { get; set; }

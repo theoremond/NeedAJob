@@ -396,5 +396,18 @@ namespace Service
         {
             throw new NotImplementedException();
         }
+
+        public Employe GetEmploye(Employe employe)
+        {
+            try
+            {
+                return DbContext.Employes.Where(e => e.NomEmploye == employe.NomEmploye).First();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
     }
 }
