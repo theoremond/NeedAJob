@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ASPNETNeedAJob.Models.OffreViewModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form action="/" method="post">
+    <input type="text" name="search" placeholder="Recherche ..." />
+    <input type="submit" name="submit" value="Rechecher" />
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idOffre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.intituleOffre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOffre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salaireOffre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descriptionOffre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idStatutOffre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.responsableOffre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idOffre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.intituleOffre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOffre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salaireOffre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriptionOffre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idStatutOffre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.responsableOffre)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "DetailsOffre", new { id = item.idOffre })
+        </td>
+    </tr>
+}
+
+</table>

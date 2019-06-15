@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceNeedAJobREST", "W
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceNeedAJobREST", "WCFServiceNeedAJobREST\WCFServiceNeedAJobREST.csproj", "{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}"
 >>>>>>> :construction: jallon3 : fait en cours
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETNeedAJob", "ASPNETNeedAJob\ASPNETNeedAJob.csproj", "{BB60E835-8A6F-4C5F-9E45-5B2F9FC1D91B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,9 +59,16 @@ Global
 		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Release|Any CPU.Build.0 = Release|Any CPU
 <<<<<<< jalon3
+<<<<<<< jalon3
 >>>>>>> :construction: jallon3 : fait en cours
 =======
 >>>>>>> :construction: jallon3 : fait en cours
+=======
+		{BB60E835-8A6F-4C5F-9E45-5B2F9FC1D91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB60E835-8A6F-4C5F-9E45-5B2F9FC1D91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB60E835-8A6F-4C5F-9E45-5B2F9FC1D91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB60E835-8A6F-4C5F-9E45-5B2F9FC1D91B}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> :construction: jallon4 : fait en cours
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,6 +18,10 @@ namespace Service
         List<Employe> GetAllEmploye();
         Employe GetEmploye(Employe employe);
         List<Employe> GetPostulationEmployeesByOffre(Offre offre);
+=======
+        IService Service();
+
+>>>>>>> :construction: jallon4 : fait en cours
         /**
          * Experience 
          */
@@ -41,6 +45,7 @@ namespace Service
         void DeleteOffre(Offre offre);
         void UpdateOffre(Offre offre);
         List<Offre> GetAllOffre();
+        Offre GetOffreById(int idOffre);
 
         /**
          * Postulation 
