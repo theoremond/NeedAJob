@@ -1,0 +1,17 @@
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\db_NeedAJob.mdf
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\db_NeedAJob_log.ldf
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\Service.dll.config
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\Service.dll
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\Service.pdb
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\biblio.dll
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\EntityFramework.dll
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\biblio.pdb
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\biblio.dll.config
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\EntityFramework.xml
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\obj\Debug\Service.csprojAssemblyReference.cache
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\obj\Debug\Service.dll
+C:\Users\root\source\repos\NeedAJob.Remond.Bruchet\Service\obj\Debug\Service.pdb

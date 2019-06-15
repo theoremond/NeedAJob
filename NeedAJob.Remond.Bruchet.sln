@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2018
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console", "console\console.csproj", "{AF8B4F3B-1307-436A-B7AF-0BA227F9DFB4}"
 EndProject
@@ -11,7 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTest", "ServiceTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{95CC3C43-6AD9-4FAD-AA53-CF5F4C9A38D0}"
 EndProject
+<<<<<<< master
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfNeadAJob", "wpfNeadAJob\wpfNeadAJob.csproj", "{3A91E904-8C42-429F-9C8D-CCE33E438BE0}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceNeedAJobREST", "WCFServiceNeedAJobREST\WCFServiceNeedAJobREST.csproj", "{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}"
+>>>>>>> :construction: jallon3 : fait en cours
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +39,17 @@ Global
 		{95CC3C43-6AD9-4FAD-AA53-CF5F4C9A38D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95CC3C43-6AD9-4FAD-AA53-CF5F4C9A38D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95CC3C43-6AD9-4FAD-AA53-CF5F4C9A38D0}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< master
 		{3A91E904-8C42-429F-9C8D-CCE33E438BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A91E904-8C42-429F-9C8D-CCE33E438BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A91E904-8C42-429F-9C8D-CCE33E438BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A91E904-8C42-429F-9C8D-CCE33E438BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> :construction: jallon3 : fait en cours
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
