@@ -11,8 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTest", "ServiceTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{95CC3C43-6AD9-4FAD-AA53-CF5F4C9A38D0}"
 EndProject
+<<<<<<< jalon3
 <<<<<<< master
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfNeadAJob", "wpfNeadAJob\wpfNeadAJob.csproj", "{3A91E904-8C42-429F-9C8D-CCE33E438BE0}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceNeedAJobREST", "WCFServiceNeedAJobREST\WCFServiceNeedAJobREST.csproj", "{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}"
+>>>>>>> :construction: jallon3 : fait en cours
 =======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceNeedAJobREST", "WCFServiceNeedAJobREST\WCFServiceNeedAJobREST.csproj", "{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}"
 >>>>>>> :construction: jallon3 : fait en cours
@@ -39,16 +43,22 @@ Global
 		{95CC3C43-6AD9-4FAD-AA53-CF5F4C9A38D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95CC3C43-6AD9-4FAD-AA53-CF5F4C9A38D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95CC3C43-6AD9-4FAD-AA53-CF5F4C9A38D0}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< jalon3
 <<<<<<< master
 		{3A91E904-8C42-429F-9C8D-CCE33E438BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A91E904-8C42-429F-9C8D-CCE33E438BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A91E904-8C42-429F-9C8D-CCE33E438BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A91E904-8C42-429F-9C8D-CCE33E438BE0}.Release|Any CPU.Build.0 = Release|Any CPU
 =======
+=======
+>>>>>>> :construction: jallon3 : fait en cours
 		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845F4CD6-2791-4E0C-A6E0-5A7B2E6E38A3}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< jalon3
+>>>>>>> :construction: jallon3 : fait en cours
+=======
 >>>>>>> :construction: jallon3 : fait en cours
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
