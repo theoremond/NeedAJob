@@ -409,5 +409,27 @@ namespace Service
             }
 
         }
+
+        public List<Employe> GetPostulationEmployeesByOffre(Offre offre)
+        {
+            try
+            {
+                List<Postulation> postulations = DbContext.Postulations.Where(p => p.IdOffrePostulation == offre.IdOffre).ToList();
+                List<Employe> employeesWichPostulate = new List<Employe>();
+                
+                foreach(Postulation post in postulations)
+                {
+                    employeesWichPostulate.Add(DbContext.Employes.Where(e => e.IdEmploye == post.IdEmployePostulation).First());                    
+                }
+
+                return employeesWichPostulate;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
     }
 }

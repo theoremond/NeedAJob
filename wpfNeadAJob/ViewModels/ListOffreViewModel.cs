@@ -14,10 +14,11 @@ namespace wpfNeadAJob.ViewModels
     {
         #region Variables
 
-        private ObservableCollection<DetailOffreViewModel> _offre = null;
+        private ObservableCollection<DetailOffreViewModel> _offres = null;
         private DetailOffreViewModel _selectedOffre;
-
+        private ObservableCollection<ListEmployeeViewModel> _employees = null;
         #endregion
+
         #region Constructeurs
 
         /// <summary>
@@ -27,14 +28,25 @@ namespace wpfNeadAJob.ViewModels
         {
             IService service = new Service.Service();
             // on appelle le mock pour initialiser une liste de produits
-           this._offre = new ObservableCollection<DetailOffreViewModel>();
+            this._offres = new ObservableCollection<DetailOffreViewModel>();
             foreach (Offre o in service.GetAllOffre())
             {
-                _offre.Add(new DetailOffreViewModel(o));
+                _offres.Add(new DetailOffreViewModel(o));
             }
 
-            if (_offre != null && _offre.Count > 0)
-                _selectedOffre = _offre.ElementAt(0);
+            this._employees = new ObservableCollection<ListEmployeeViewModel>();
+            
+            if (_offres != null && _offres.Count > 0)
+            {
+                _selectedOffre = _offres.ElementAt(0);
+
+                service.GetPostulationEmployeesByOffre(_selectedOffre.GetOffre()).ForEach(emp =>
+                {
+                    this._employees.Add(new ListEmployeeViewModel(emp));
+                });
+            }
+
+          
         }
 
         #endregion
@@ -44,12 +56,12 @@ namespace wpfNeadAJob.ViewModels
         /// <summary>
         /// Obtient ou définit une collection de DetailProduitViewModel (Observable)
         /// </summary>
-        public ObservableCollection<DetailOffreViewModel> Offre
+        public ObservableCollection<DetailOffreViewModel> Offres
         {
-            get { return _offre; }
+            get { return _offres; }
             set
             {
-                _offre = value;
+                _offres = value;
                 OnPropertyChanged("Offres");
             }
         }
@@ -57,17 +69,15 @@ namespace wpfNeadAJob.ViewModels
         /// <summary>
         /// Obtient ou défini le produit en cours de sélection dans la liste de DetailProduitViewModel
         /// </summary>
-        public DetailOffreViewModel SelectedProduit
+        public DetailOffreViewModel SelectedOffre
         {
             get { return _selectedOffre; }
             set
             {
                 _selectedOffre = value;
-                OnPropertyChanged("SelectedProduit");
+                OnPropertyChanged("SelectedOffre");
             }
         }
-
-
         #endregion
     }
 }

@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
             <RowDefinition></RowDefinition>
-            
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -19,9 +19,9 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" HorizontalAlignment="Stretch" Background="AliceBlue" FontWeight="Bold">FICHE OFFRE</Label>
+        <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" HorizontalAlignment="Stretch" Background="AliceBlue" FontWeight="Bold" >FICHE OFFRE</Label>
 
-        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical">
+        <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical">
             <Label>Intitulé de l'offre</Label>
             <TextBox Text="{Binding IntituleOffre}"></TextBox>
             <Label>Salaire</Label>
@@ -31,5 +31,7 @@
             <Label>Responsable</Label>
             <TextBox Text="{Binding ResponsableOffre}"></TextBox>
         </StackPanel>
+
+
     </Grid>
 </UserControl>

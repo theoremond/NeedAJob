@@ -32,7 +32,7 @@ namespace wpfNeadAJob.ViewModels
         /// <summary>
         /// Obtient ou définit le ListeProduitViewModel
         /// </summary>
-        public ListOffreViewModel ListeProduitViewModel
+        public ListOffreViewModel ListeOffreViewModel
         {
             get { return _listOffreViewModel; }
             set { _listOffreViewModel = value; }

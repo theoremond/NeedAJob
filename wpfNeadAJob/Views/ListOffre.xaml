@@ -17,15 +17,16 @@
         </Grid.ColumnDefinitions>
 
         <ListView Grid.Column="0"  Grid.Row="0" Grid.RowSpan="2" Margin="5px" 
-                  ItemsSource="{Binding Offre, UpdateSourceTrigger=PropertyChanged}" 
+                  ItemsSource="{Binding Offres, UpdateSourceTrigger=PropertyChanged}" 
                   SelectedItem="{Binding SelectedOffre, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="100px" Header="Id" DisplayMemberBinding="{Binding IdOffre}" />
-                    <GridViewColumn Width="150px" Header="Nom" DisplayMemberBinding="{Binding IntituleOffre}" />
+                    <GridViewColumn Width="150px" Header="Offre" DisplayMemberBinding="{Binding IntituleOffre}" />
                 </GridView>
             </ListView.View>
         </ListView>
         <local:DetailOffre Grid.Column="1" DataContext="{Binding SelectedOffre, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"></local:DetailOffre>
+        <local:ListEmployee DataContext="{Binding SelectedOffre, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1"></local:ListEmployee>
     </Grid>
 </UserControl>

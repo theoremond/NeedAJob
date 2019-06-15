@@ -16,7 +16,7 @@ namespace Service
         void DeleteEmploye(Employe employe);
         void UpdateEmploye(Employe employe);
         List<Employe> GetAllEmploye();
-
+        List<Employe> GetPostulationEmployeesByOffre(Offre offre);
         /**
          * Experience 
          */
@@ -48,7 +48,7 @@ namespace Service
         void DeletePostulation(Postulation postulation);
         void UpdatePostulation(Postulation postulation);
         List<Postulation> GetAllPostulation();
-
+        
         /**
          * Statut 
          */

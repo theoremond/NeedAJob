@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="wpfNeadAJob.Views.ListEmployee"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpfNeadAJob.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListView Grid.Row="0" Grid.RowSpan="2" Margin="5px" 
+                  ItemsSource="{Binding Employees, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100px" Header="Id" DisplayMemberBinding="{Binding IdEmployee}" />
+                    <GridViewColumn Width="150px" Header="Nom" DisplayMemberBinding="{Binding NomEmploye}" />
+                    <GridViewColumn Width="150px" Header="Prénom" DisplayMemberBinding="{Binding PrenomEmploye}" />
+                    <GridViewColumn Width="200px" Header="Date de naissance" DisplayMemberBinding="{Binding DateDeNaissanceEmploye}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

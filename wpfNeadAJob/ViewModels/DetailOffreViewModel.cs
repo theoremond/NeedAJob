@@ -16,12 +16,14 @@ namespace wpfNeadAJob.ViewModels
         private float salaireOffre;
         private string descriptionOffre;
         private string responsableOffre;
+        private Offre offre;
         private RelayCommand _addOperation;
         #endregion
 
         #region Constructeurs
         public DetailOffreViewModel (Offre offre)
         {
+            this.offre = offre;
             this.intituleOffre = offre.IntituleOffre;
             this.salaireOffre = offre.SalaireOffre;
             this.descriptionOffre = offre.DescriptionOffre;
@@ -29,7 +31,10 @@ namespace wpfNeadAJob.ViewModels
 
         }
         #endregion
-
+        public Offre GetOffre()
+        {
+            return this.offre;
+        }
         #region Data Bindings
 
         public string IntituleOffre
@@ -55,33 +60,6 @@ namespace wpfNeadAJob.ViewModels
             get { return responsableOffre; }
             set { responsableOffre = value; }
         }
-        #endregion
-
-        #region Commandes
-
-        /// <summary>
-        /// Commande pour ouvrir la fenêtre pour ajouter une opération
-        /// </summary>
-        public ICommand AddOperation
-        {
-            get
-            {
-                if (_addOperation == null)
-                    _addOperation = new RelayCommand(() => this.ShowWindowOperation());
-                return _addOperation;
-            }
-        }
-
-        /// <summary>
-        /// Permet l'ouverture de la fenêtre
-        /// </summary>
-        private void ShowWindowOperation()
-        {
-            Views.Operation operationWindow = new Views.Operation();
-            operationWindow.DataContext = this;
-            operationWindow.ShowDialog();
-        }
-
         #endregion
     }
 }
