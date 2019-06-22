@@ -16,12 +16,12 @@ namespace Service
         void DeleteEmploye(Employe employe);
         void UpdateEmploye(Employe employe);
         List<Employe> GetAllEmploye();
+<<<<<<< jalon3
         Employe GetEmploye(Employe employe);
-        List<Employe> GetPostulationEmployeesByOffre(Offre offre);
 =======
-        IService Service();
+>>>>>>> fix
+        List<Employe> GetPostulationEmployeesByOffre(Offre offre);
 
->>>>>>> :construction: jallon4 : fait en cours
         /**
          * Experience 
          */
