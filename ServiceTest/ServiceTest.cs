@@ -7,6 +7,10 @@ using System.Linq;
 
 namespace ServiceTest
 {
+    /// <summary>
+    /// Des test !!!
+    /// TODO : Faire des test au minimum sur une entity sinon sur tout si le time !!!
+    /// </summary>
     [TestClass]
     public class ServiceTest
     {

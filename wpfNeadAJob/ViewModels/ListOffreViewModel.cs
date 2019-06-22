@@ -13,10 +13,8 @@ namespace wpfNeadAJob.ViewModels
     public class ListOffreViewModel : BaseViewModel
     {
         #region Variables
-
         private ObservableCollection<DetailOffreViewModel> _offres = null;
         private DetailOffreViewModel _selectedOffre;
-        private ObservableCollection<ListEmployeeViewModel> _employees = null;
         #endregion
 
         #region Constructeurs
@@ -33,20 +31,14 @@ namespace wpfNeadAJob.ViewModels
             {
                 _offres.Add(new DetailOffreViewModel(o));
             }
-
-            this._employees = new ObservableCollection<ListEmployeeViewModel>();
             
             if (_offres != null && _offres.Count > 0)
             {
                 _selectedOffre = _offres.ElementAt(0);
-
-                service.GetPostulationEmployeesByOffre(_selectedOffre.GetOffre()).ForEach(emp =>
-                {
-                    this._employees.Add(new ListEmployeeViewModel(emp));
-                });
+                ListEmployeeViewModel listEmp = new ListEmployeeViewModel(_selectedOffre.GetOffre());
             }
 
-          
+
         }
 
         #endregion

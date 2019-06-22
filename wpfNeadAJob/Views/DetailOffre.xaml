@@ -31,7 +31,5 @@
             <Label>Responsable</Label>
             <TextBox Text="{Binding ResponsableOffre}"></TextBox>
         </StackPanel>
-
-
     </Grid>
 </UserControl>

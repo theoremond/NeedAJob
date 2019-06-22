@@ -17,7 +17,7 @@ namespace wpfNeadAJob.ViewModels
         private string descriptionOffre;
         private string responsableOffre;
         private Offre offre;
-        private RelayCommand _addOperation;
+        private Service.IService service = new Service.Service();
         #endregion
 
         #region Constructeurs
@@ -39,26 +39,38 @@ namespace wpfNeadAJob.ViewModels
 
         public string IntituleOffre
         {
-            get { return intituleOffre; }
-            set { intituleOffre = value; }
+            get { return this.offre.IntituleOffre; }
+            set {
+                this.offre.IntituleOffre = value;
+                this.service.UpdateOffre(this.offre);
+            }
         }
 
         public float SalaireOffre
         {
-            get { return salaireOffre; }
-            set { salaireOffre = value; }
+            get { return this.offre.SalaireOffre; }
+            set {
+                this.offre.SalaireOffre = value;
+                this.service.UpdateOffre(this.offre);
+            }
         }
 
         public string DescriptionOffre
         {
-            get { return descriptionOffre; }
-            set { descriptionOffre = value; }
+            get { return this.offre.DescriptionOffre; }
+            set {
+                this.offre.DescriptionOffre = value;
+                this.service.UpdateOffre(this.offre);
+            }
         }
 
         public string ResponsableOffre
         {
-            get { return responsableOffre; }
-            set { responsableOffre = value; }
+            get { return this.offre.ResponsableOffre; }
+            set {
+                this.offre.ResponsableOffre = value;
+                this.service.UpdateOffre(this.offre);
+            }
         }
         #endregion
     }

@@ -13,64 +13,37 @@ namespace wpfNeadAJob.ViewModels
     public class ListEmployeeViewModel : BaseViewModel
     {
         #region Variables
-        private Employe employe;
+        private ObservableCollection<Employe> _employees;
         #endregion
 
         #region Constructeurs
         public ListEmployeeViewModel(Offre offre)
         {
             IService service = new Service.Service();
+
+            this._employees = new ObservableCollection<Employe>();
+
             // on appelle le mock pour initialiser une liste de produits
-           
+            foreach (Employe e in service.GetPostulationEmployeesByOffre(offre))
+            {
+                Employees.Add(e);
+            }
+            OnPropertyChanged("Employees");
         }
 
-        public ListEmployeeViewModel(Employe employe)
-        {
-            this.employe = employe;
-        }
         #endregion
 
         #region  Data Bindings
-        //public int IdEmploye
-        //{
-        //    get { return this.employe.IdEmploye; }
-        //    set { this.employe.IdEmploye = value; }
-        //}
-        //public String NomEmploye
-        //{
-        //    get { return this.nomEmploye; }
-        //    set { this.employe.NomEmploye = value; }
-        //}
-        //public String PrenomEmploye
-        //{
-        //    get { return this.employe.PrenomEmploye; }
-        //    set { this.employe.PrenomEmploye = value; }
-        //}
-        //public DateTime DateDeNaissanceEmploye
-        //{
-        //    get { return this.employe.DateDeNaissanceEmploye; }
-        //    set { this.employe.DateDeNaissanceEmploye = value; }
-        //}
-        //public int AncienneteEmploye
-        //{
-        //    get { return this.employe.AncienneteEmploye; }
-        //    set { this.employe.AncienneteEmploye = value; }
-        //}
-        //public String BiographieEmploye
-        //{
-        //    get { return this.employe.BiographieEmploye; }
-        //    set { this.employe.BiographieEmploye = value; }
-        //}
 
-        //public ObservableCollection<ListEmployeeViewModel> Employees
-        //{
-        //    get { return this._employees; }
-        //    set
-        //    {
-        //        _employees = value;
-        //        OnPropertyChanged("Employees");
-        //    }
-        //}
+        public ObservableCollection<Employe> Employees
+        {
+            get { return _employees; }
+            set
+            {
+                _employees = value;
+                OnPropertyChanged("Employees");
+            }
+        }
         #endregion
     }
 }

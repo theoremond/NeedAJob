@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace Service
 {
+    /// <summary>
+    /// TODO : Faire les UPDATES
+    /// </summary>
     public class Service : IService
     {
         /**
@@ -384,7 +387,21 @@ namespace Service
 
         public void UpdateOffre(Offre offre)
         {
-            throw new NotImplementedException();
+            try {
+                Offre oldOffre = DbContext.Offres.Where(o => o.IdOffre == offre.IdOffre).First();
+
+                oldOffre.IntituleOffre = offre.IntituleOffre;
+                oldOffre.DateOffre = offre.DateOffre;
+                oldOffre.SalaireOffre = offre.SalaireOffre;
+                oldOffre.DescriptionOffre = offre.DescriptionOffre;
+                oldOffre.IdStatutOffre = offre.IdStatutOffre;
+                oldOffre.ResponsableOffre = offre.ResponsableOffre;
+
+                DbContext.SaveChanges();
+            }
+            catch(Exception e) {
+                throw e;
+            }
         }
 
         public void UpdatePostulation(Postulation postulation)
