@@ -64,12 +64,24 @@
 </div>
 <p>
     @*@Html.ActionLink("Postuler", "AjouterPostulationOffre", new { id = Model.idOffre})*@
-    <a onclick="test()">Postuler</a>&nbsp;|
+    <a id="postulation" data-idoffre="@Model.idOffre">Postuler</a>&nbsp;|
     @Html.ActionLink("Back to List", "ListeOffres")
 </p>
 
-<script>
-    function test() {
-        alert('test !');
-    }
+<script type="text/javascript">
+    $( document ).ready(function () {
+        alert('ready !');
+        $('#postulation').on('click', function () {
+            const idOffre = $('#postulation').data('idoffre');
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("PostulerOffre", "Offre")',
+                data: { "idOffre": idOffre, "idEmploye": 1 },
+                success: function (data) {
+                    alert(data);
+                },
+                dataType: "json"
+            });
+        });
+    });
 </script>

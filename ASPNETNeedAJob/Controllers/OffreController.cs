@@ -28,9 +28,9 @@ namespace ASPNETNeedAJob.Controllers
             return View(GetOffreById(id));
         }
 
-        public ActionResult PostulerOffre()
+        public ActionResult PostulerOffre(int idOffre, int idEmploye)
         {
-            return View();
+            return Json(new { Postulation = idOffre, Employe = idEmploye }, JsonRequestBehavior.AllowGet);
         }
 
         public OffreViewModel GetOffreById(int idOffre)
