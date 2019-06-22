@@ -29,6 +29,7 @@ namespace biblio.Mappings
 
             Property(p => p.DateOffre)
                 .HasColumnName("DATEOFFRE")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             Property(p => p.SalaireOffre)

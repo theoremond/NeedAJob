@@ -18,10 +18,14 @@ namespace biblio.Mappings
             ToTable("EMPLOYE");
             HasKey(k => k.IdEmploye);
 
-            Property(p => p.NomEmploye)
-                .HasColumnName("NOM_EMPLOYE")
+            Property(p => p.IdEmploye)
+                .HasColumnName("ID_EMPLOYE")
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            Property(p => p.NomEmploye)
+                .HasColumnName("NOM_EMPLOYE")
+                .IsRequired();
 
             Property(p => p.PrenomEmploye)
                 .HasColumnName("PRENOM_EMPLOYE")
@@ -29,6 +33,7 @@ namespace biblio.Mappings
 
             Property(p => p.DateDeNaissanceEmploye)
                 .HasColumnName("DATE_DE_NAISSANCE_EMPLOYE")
+                .HasColumnType("datetime2")
                 .IsOptional();
 
             Property(p => p.AncienneteEmploye)
