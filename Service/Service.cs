@@ -21,6 +21,7 @@ namespace Service
             DbContext = new ContextFluent();
         }
 
+        #region Employe
         public void AddEmploye(Employe employe)
         {
             try
@@ -42,120 +43,6 @@ namespace Service
             }
         }
 
-        public void AddExperience(Experience experience)
-        {
-            try
-            {
-                Experience entity = DbContext.Experiences.Where(e => e.IdExperience == experience.IdExperience).FirstOrDefault();
-
-                if (entity != null)
-                {
-                    Console.WriteLine("Entity déja présente !");
-                }
-                else
-                {
-                    DbContext.Experiences.Add(experience);
-                    DbContext.SaveChanges();
-                }
-
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public void AddFormation(Formation formation)
-        {
-            try
-            {
-                Formation entity = DbContext.Formations.Where(e => e.IdFormation == formation.IdFormation).FirstOrDefault();
-
-                if (entity != null)
-                {
-                    Console.WriteLine("Entity déja présente !");
-                }
-                else
-                {
-                    DbContext.Formations.Add(formation);
-                    DbContext.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-             
-        public void AddOffre(Offre offre)
-        {
-            try
-            {
-                Offre entity = DbContext.Offres.Where(e => e.IdOffre == offre.IdOffre).FirstOrDefault();
-
-                if (entity != null)
-                {
-                    Console.WriteLine("Entity déja présente !");
-                }
-                else
-                {
-                    DbContext.Offres.Add(offre);
-                    DbContext.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public void AddPostulation(Postulation postulation)
-        {
-            try
-            {
-                Postulation entity = DbContext.Postulations
-                    .Where(postule => postule.IdEmployePostulation == postulation.IdEmployePostulation &&
-                                      postule.IdOffrePostulation == postulation.IdOffrePostulation)
-                    .FirstOrDefault();
-
-                if (entity != null)
-                {
-                    Console.WriteLine("Entity déja présente !");
-                }
-                else
-                {
-                    DbContext.Postulations.Add(postulation);
-                    DbContext.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public void AddStatut(Statut statut)
-        {
-            try
-            {
-                Statut entity = DbContext.Statuts.Where(e => e.IdStatut == statut.IdStatut).FirstOrDefault();
-
-                if (entity != null)
-                {
-                    Console.WriteLine("Entity déja présente !");
-                }
-                else
-                {
-                    DbContext.Statuts.Add(statut);
-                    DbContext.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
         public void DeleteEmploye(Employe employe)
         {
             try
@@ -169,6 +56,79 @@ namespace Service
                 else
                 {
                     DbContext.Employes.Remove(employe);
+                    DbContext.SaveChanges();
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public List<Employe> GetAllEmploye()
+        {
+            try
+            {
+                return DbContext.Employes.ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
+        public Employe GetEmploye(Employe employe)
+        {
+            try
+            {
+                return DbContext.Employes.Where(emp => emp.IdEmploye == employe.IdEmploye).Single();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
+        public void UpdateEmploye(Employe employe)
+        {
+            try
+            {
+                Employe oldEmploye = DbContext.Employes.Where(empl => empl.IdEmploye == employe.IdEmploye).First();
+
+                oldEmploye.NomEmploye = employe.NomEmploye;
+                oldEmploye.PrenomEmploye = employe.PrenomEmploye;
+                oldEmploye.DateDeNaissanceEmploye = employe.DateDeNaissanceEmploye;
+                oldEmploye.AncienneteEmploye = employe.AncienneteEmploye;
+                oldEmploye.BiographieEmploye = employe.BiographieEmploye;
+
+                DbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        #endregion
+
+        #region Experience
+        public void AddExperience(Experience experience)
+        {
+            try
+            {
+                Experience entity = DbContext.Experiences.Where(e => e.IdExperience == experience.IdExperience).FirstOrDefault();
+
+                if (entity != null)
+                {
+                    Console.WriteLine("Entity déja présente !");
+                }
+                else
+                {
+                    DbContext.Experiences.Add(experience);
                     DbContext.SaveChanges();
                 }
 
@@ -202,6 +162,63 @@ namespace Service
             }
         }
 
+        public List<Experience> GetAllExperience()
+        {
+            try
+            {
+                return DbContext.Experiences.ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void UpdateExperience(Experience experience)
+        {
+            try
+            {
+                Experience oldExperience = DbContext.Experiences.Where(exp => exp.IdExperience == experience.IdExperience).First();
+
+                oldExperience.IdExperience = experience.IdExperience;
+                oldExperience.IdEmployeExperience = experience.IdEmployeExperience;
+                oldExperience.IntituleExperience = experience.IntituleExperience;
+                oldExperience.DateExperience = experience.DateExperience;
+
+                DbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        
+        #endregion
+
+        #region Formation
+        public void AddFormation(Formation formation)
+        {
+            try
+            {
+                Formation entity = DbContext.Formations.Where(e => e.IdFormation == formation.IdFormation).FirstOrDefault();
+
+                if (entity != null)
+                {
+                    Console.WriteLine("Entity déja présente !");
+                }
+                else
+                {
+                    DbContext.Formations.Add(formation);
+                    DbContext.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         public void DeleteFormation(Formation formation)
         {
             try
@@ -225,6 +242,64 @@ namespace Service
             }
         }
 
+        public List<Formation> GetAllFormation()
+        {
+            try
+            {
+                return DbContext.Formations.ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void UpdateFormation(Formation formation)
+        {
+            try
+            {
+                Formation oldFormation = DbContext.Formations.Where(form => form.IdFormation == formation.IdFormation).First();
+
+                oldFormation.IdFormation = formation.IdFormation;
+                oldFormation.IdEmployeFormation = formation.IdEmployeFormation;
+                oldFormation.IntituleFormation = formation.IntituleFormation;
+                oldFormation.DateFormation = formation.DateFormation;
+
+                DbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+    
+
+        #endregion
+
+        #region Offre
+        public void AddOffre(Offre offre)
+        {
+            try
+            {
+                Offre entity = DbContext.Offres.Where(e => e.IdOffre == offre.IdOffre).FirstOrDefault();
+
+                if (entity != null)
+                {
+                    Console.WriteLine("Entity déja présente !");
+                }
+                else
+                {
+                    DbContext.Offres.Add(offre);
+                    DbContext.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         public void DeleteOffre(Offre offre)
         {
             try
@@ -241,6 +316,80 @@ namespace Service
                     DbContext.SaveChanges();
                 }
 
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public List<Offre> GetAllOffre()
+        {
+            try
+            {
+                return DbContext.Offres.ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void UpdateOffre(Offre offre)
+        {
+            try
+            {
+                Offre oldOffre = DbContext.Offres.Where(o => o.IdOffre == offre.IdOffre).First();
+
+                oldOffre.IntituleOffre = offre.IntituleOffre;
+                oldOffre.DateOffre = offre.DateOffre;
+                oldOffre.SalaireOffre = offre.SalaireOffre;
+                oldOffre.DescriptionOffre = offre.DescriptionOffre;
+                oldOffre.IdStatutOffre = offre.IdStatutOffre;
+                oldOffre.ResponsableOffre = offre.ResponsableOffre;
+
+                DbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public Offre GetOffre(Offre offre)
+        {
+            try
+            {
+                return DbContext.Offres.Where(emp => emp.IdOffre == offre.IdOffre).First();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
+        #endregion
+
+        #region Postulation
+        public void AddPostulation(Postulation postulation)
+        {
+            try
+            {
+                Postulation entity = DbContext.Postulations
+                    .Where(postule => postule.IdEmployePostulation == postulation.IdEmployePostulation &&
+                                      postule.IdOffrePostulation == postulation.IdOffrePostulation)
+                    .FirstOrDefault();
+
+                if (entity != null)
+                {
+                    Console.WriteLine("Entity déja présente !");
+                }
+                else
+                {
+                    DbContext.Postulations.Add(postulation);
+                    DbContext.SaveChanges();
+                }
             }
             catch (Exception e)
             {
@@ -274,6 +423,83 @@ namespace Service
             }
         }
 
+        public List<Postulation> GetAllPostulation()
+        {
+            try
+            {
+                return DbContext.Postulations.ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void UpdatePostulation(Postulation postulation)
+        {
+            try
+            {
+                Postulation oldPostulation = DbContext.Postulations.Where(postu => postu.IdOffrePostulation == postulation.IdOffrePostulation).First();
+
+                oldPostulation.IdOffrePostulation = postulation.IdOffrePostulation;
+                oldPostulation.IdEmployePostulation = postulation.IdEmployePostulation;
+                oldPostulation.DatePostulation = postulation.DatePostulation;
+                oldPostulation.StatutPostulation = postulation.StatutPostulation;
+
+                DbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public List<Employe> GetPostulationEmployeesByOffre(Offre offre)
+        {
+            try
+            {
+                List<Postulation> postulations = DbContext.Postulations.Where(p => p.IdOffrePostulation == offre.IdOffre).ToList();
+                List<Employe> employeesWichPostulate = new List<Employe>();
+
+                foreach (Postulation post in postulations)
+                {
+                    employeesWichPostulate.Add(DbContext.Employes.Where(e => e.IdEmploye == post.IdEmployePostulation).First());
+                }
+
+                return employeesWichPostulate;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+    
+        #endregion
+
+        #region Statut
+        public void AddStatut(Statut statut)
+        {
+            try
+            {
+                Statut entity = DbContext.Statuts.Where(e => e.IdStatut == statut.IdStatut).FirstOrDefault();
+
+                if (entity != null)
+                {
+                    Console.WriteLine("Entity déja présente !");
+                }
+                else
+                {
+                    DbContext.Statuts.Add(statut);
+                    DbContext.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         public void DeleteStatut(Statut statut)
         {
             try
@@ -297,67 +523,6 @@ namespace Service
             }
         }
 
-        public List<Employe> GetAllEmploye()
-        {
-            try
-            {
-                return DbContext.Employes.ToList();
-            }
-            catch (Exception e)
-            { 
-                throw e;
-            }
- 
-        }
-
-        public List<Experience> GetAllExperience()
-        {
-            try
-            {
-                return DbContext.Experiences.ToList();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public List<Formation> GetAllFormation()
-        {
-            try
-            {
-                return DbContext.Formations.ToList();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public List<Offre> GetAllOffre()
-        {
-            try
-            {
-                return DbContext.Offres.ToList();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public List<Postulation> GetAllPostulation()
-        {
-            try
-            {
-                return DbContext.Postulations.ToList();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
         public List<Statut> GetAllStatut()
         {
             try
@@ -370,83 +535,24 @@ namespace Service
             }
         }
 
-        public void UpdateEmploye(Employe employe)
+        public void UpdateStatut(Statut statut)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                Statut oldStatut = DbContext.Statuts.Where(stat => stat.IdStatut == statut.IdStatut).First();
 
-        public void UpdateExperience(Experience experience)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateFormation(Formation formation)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateOffre(Offre offre)
-        {
-            try {
-                Offre oldOffre = DbContext.Offres.Where(o => o.IdOffre == offre.IdOffre).First();
-
-                oldOffre.IntituleOffre = offre.IntituleOffre;
-                oldOffre.DateOffre = offre.DateOffre;
-                oldOffre.SalaireOffre = offre.SalaireOffre;
-                oldOffre.DescriptionOffre = offre.DescriptionOffre;
-                oldOffre.IdStatutOffre = offre.IdStatutOffre;
-                oldOffre.ResponsableOffre = offre.ResponsableOffre;
+                oldStatut.IdStatut = statut.IdStatut;
+                oldStatut.Libelle = statut.Libelle;
 
                 DbContext.SaveChanges();
             }
-            catch(Exception e) {
-                throw e;
-            }
-        }
-
-        public void UpdatePostulation(Postulation postulation)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateStatut(Statut statut)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Employe GetEmploye(Employe employe)
-        {
-            try
-            {
-                return DbContext.Employes.Where(e => e.NomEmploye == employe.NomEmploye).First();
-            }
             catch (Exception e)
             {
-                throw e;
-            }
 
-        }
-
-        public List<Employe> GetPostulationEmployeesByOffre(Offre offre)
-        {
-            try
-            {
-                List<Postulation> postulations = DbContext.Postulations.Where(p => p.IdOffrePostulation == offre.IdOffre).ToList();
-                List<Employe> employeesWichPostulate = new List<Employe>();
-                
-                foreach(Postulation post in postulations)
-                {
-                    employeesWichPostulate.Add(DbContext.Employes.Where(e => e.IdEmploye == post.IdEmployePostulation).First());                    
-                }
-
-                return employeesWichPostulate;
-            }
-            catch (Exception e)
-            {
                 throw e;
             }
         }
 
-
+        #endregion
     }
 }
