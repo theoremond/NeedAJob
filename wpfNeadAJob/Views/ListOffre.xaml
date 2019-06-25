@@ -10,13 +10,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="49*" />
             <RowDefinition Height="26*"/>
+            <RowDefinition Height="8.5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="265"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Column="0"  Grid.Row="0" Grid.RowSpan="2" Margin="5px" 
+        <ListView Name="listview" Grid.Column="0"  Grid.Row="0" Grid.RowSpan="2" Margin="5px" 
                   ItemsSource="{Binding Offres, UpdateSourceTrigger=PropertyChanged}" 
                   SelectedItem="{Binding SelectedOffre, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
             <ListView.View>
@@ -26,7 +27,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="3" Grid.RowSpan="1">
+            <TextBox Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Button Command="{Binding Rechercher}">Rechercher</Button>
+        </StackPanel>
+
+
         <local:DetailOffre Grid.Column="1" DataContext="{Binding SelectedOffre, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"></local:DetailOffre>
-        <local:ListEmployee DataContext="{Binding SelectedOffre, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1"></local:ListEmployee>
+        <local:ListEmployee DataContext="{Binding SelectedOffre, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2"></local:ListEmployee>
     </Grid>
 </UserControl>

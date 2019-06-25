@@ -43,6 +43,7 @@ namespace WCFServiceNeedAJobREST
             return tests;
         }
 
+        // Todo : Faire le post : 
         public string PostPostulation(PostulationDTO postulation)
         {
             Offre offre = new Offre();
