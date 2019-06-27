@@ -132,9 +132,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeViewModel.cs" />
-    <Compile Include="Models\ExperienceViewModel.cs" />
-    <Compile Include="Models\FormationViewModel.cs" />
     <Compile Include="Models\OffreViewModel.cs" />
     <Compile Include="Models\PostulationViewModel.cs" />
     <Compile Include="Models\StatutViewModel.cs" />
@@ -178,8 +175,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Offre\ListeOffres.cshtml" />
     <Content Include="Views\Offre\DetailsOffre.cshtml" />
-    <Content Include="Views\Offre\RechercheOffre.cshtml" />
     <Content Include="Views\Postulation\ListePostulations.cshtml" />
+    <Content Include="Views\Offre\ListeOffresRecherche.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

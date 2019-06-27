@@ -18,9 +18,10 @@ namespace ASPNETNeedAJob.Controllers
             return View(GetOffres());
         }
 
-        public ActionResult RechercheOffre()
+        
+        public ActionResult ListeOffresRecherche(String recherche)
         {
-            return View();
+            return View("ListeOffres",GetOffresRecherche(recherche));
         }
 
         public ActionResult DetailsOffre(int id)
@@ -30,7 +31,15 @@ namespace ASPNETNeedAJob.Controllers
 
         public ActionResult PostulerOffre(int idOffre, int idEmploye)
         {
-            return Json(new { Postulation = idOffre, Employe = idEmploye }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                AjouterPostulationOnOffreByEmploye(idOffre, idEmploye);
+                return Json(new { Postulation = idOffre, Employe = idEmploye }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public OffreViewModel GetOffreById(int idOffre)
@@ -76,6 +85,36 @@ namespace ASPNETNeedAJob.Controllers
             offreModel.responsableOffre = offre.ResponsableOffre;
             offreModel.salaireOffre = offre.SalaireOffre;
             return offreModel;
+        }
+
+        public void AjouterPostulationOnOffreByEmploye(int idOffre, int idEmploye)
+        {
+            service = new Service.Service();
+            Postulation postulation = new Postulation();
+            postulation.IdOffrePostulation = idOffre;
+            postulation.IdEmployePostulation = idEmploye;
+            postulation.DatePostulation = DateTime.Now;
+            postulation.StatutPostulation = "2";
+            service.AddPostulation(postulation);
+        }
+
+        public List<OffreViewModel> GetOffresRecherche(String recherche)
+        {
+            service = new Service.Service();
+            List<OffreViewModel> offres = new List<OffreViewModel>();
+            try
+            {
+                List<Offre> offresBdd = service.GetOffresRecherche(recherche);
+                foreach (Offre offre in offresBdd)
+                {
+                    offres.Add(ConvertirOffre(offre));
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return offres;
         }
     }
 }

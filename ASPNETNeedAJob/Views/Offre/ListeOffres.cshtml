@@ -1,9 +1,12 @@
 ﻿@model IEnumerable<ASPNETNeedAJob.Models.OffreViewModel>
-<form action="/" method="post">
-    <input type="text" name="search" placeholder="Recherche ..." />
-    <input type="submit" name="submit" value="Rechecher" />
+
+@*@using (Html.BeginForm("ListeOffresRecherche", "Offre", FormMethod.Get))
+           {@Html.TextBox("search", null, new { id = "recupererRecherche();" })}*@
+<form method="get" action="@Url.Action("ListeOffresRecherche", "Offre")">
+    <input id="rechercheOffres" type="search" name="recherche" placeholder="Recherche ..." />
 </form>
-<table class="table">
+
+<table class="table" id="tableOffres">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.idOffre)
@@ -29,33 +32,54 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idOffre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.intituleOffre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dateOffre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.salaireOffre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descriptionOffre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idStatutOffre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.responsableOffre)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "DetailsOffre", new { id = item.idOffre })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idOffre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.intituleOffre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOffre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salaireOffre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descriptionOffre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idStatutOffre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.responsableOffre)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "DetailsOffre", new { id = item.idOffre })
+            </td>
+        </tr>
+    }
 </table>
+
+<script>
+    //$(function () {
+    //    $('form').submit(function () {
+    //        $.ajax({
+    //            url: this.action,
+    //            type: this.method,
+    //            data: { recherche: $('#rechercheOffres').val()},
+    //            success: function (result) {
+    //                console.log(result);
+    //            }
+    //        });
+    //        return false;
+    //    });
+    //});
+
+    //function recupererRecherche() {
+    //    alert('ping');
+    //    return $('#rechercheOffres').val();
+    //}
+</script>

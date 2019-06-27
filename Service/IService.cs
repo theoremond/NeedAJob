@@ -46,6 +46,7 @@ namespace Service
         void UpdateOffre(Offre offre);
         List<Offre> GetAllOffre();
         Offre GetOffreById(int idOffre);
+        List<Offre> GetOffresRecherche(String recherche);
 
         /**
          * Postulation 

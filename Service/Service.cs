@@ -544,6 +544,20 @@ namespace Service
                 throw e;
             }
         }
+
+        public List<Offre> GetOffresRecherche(string recherche)
+        {
+            try
+            {
+                return DbContext.Offres.Where(o =>
+                    o.IntituleOffre.Contains(recherche) ||
+                    o.ResponsableOffre.Contains(recherche)
+                ).ToList();
+            } catch (Exception e)
+            {
+                throw e;
+            }
+        }
 <<<<<<< jalon3
 
         public void UpdateStatut(Statut statut)
