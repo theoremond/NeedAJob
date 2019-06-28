@@ -176,7 +176,6 @@
     <Content Include="Views\Offre\ListeOffres.cshtml" />
     <Content Include="Views\Offre\DetailsOffre.cshtml" />
     <Content Include="Views\Postulation\ListePostulations.cshtml" />
-    <Content Include="Views\Offre\ListeOffresRecherche.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

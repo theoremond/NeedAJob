@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<ASPNETNeedAJob.Models.OffreViewModel>
 
-@*@using (Html.BeginForm("ListeOffresRecherche", "Offre", FormMethod.Get))
-           {@Html.TextBox("search", null, new { id = "recupererRecherche();" })}*@
 <form method="get" action="@Url.Action("ListeOffresRecherche", "Offre")">
-    <input id="rechercheOffres" type="search" name="recherche" placeholder="Recherche ..." />
+    <div class="active-cyan-4" style="margin-top: 10px; margin-bottom: 10px;">
+        <input class="form-control" type="text" placeholder="Rechercher ..." aria-label="Recherche">
+    </div>
 </form>
 
 <table class="table" id="tableOffres">
@@ -62,24 +62,3 @@
         </tr>
     }
 </table>
-
-<script>
-    //$(function () {
-    //    $('form').submit(function () {
-    //        $.ajax({
-    //            url: this.action,
-    //            type: this.method,
-    //            data: { recherche: $('#rechercheOffres').val()},
-    //            success: function (result) {
-    //                console.log(result);
-    //            }
-    //        });
-    //        return false;
-    //    });
-    //});
-
-    //function recupererRecherche() {
-    //    alert('ping');
-    //    return $('#rechercheOffres').val();
-    //}
-</script>

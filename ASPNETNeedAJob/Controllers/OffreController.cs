@@ -21,7 +21,7 @@ namespace ASPNETNeedAJob.Controllers
         
         public ActionResult ListeOffresRecherche(String recherche)
         {
-            return View("ListeOffres",GetOffresRecherche(recherche));
+            return View("ListeOffres", GetOffresRecherche(recherche));
         }
 
         public ActionResult DetailsOffre(int id)
