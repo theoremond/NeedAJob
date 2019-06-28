@@ -30,7 +30,6 @@
 
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="3" Grid.RowSpan="1">
             <TextBox Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <Button Command="{Binding Rechercher}">Rechercher</Button>
         </StackPanel>
 
 

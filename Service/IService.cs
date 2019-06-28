@@ -16,10 +16,7 @@ namespace Service
         void DeleteEmploye(Employe employe);
         void UpdateEmploye(Employe employe);
         List<Employe> GetAllEmploye();
-<<<<<<< jalon3
         Employe GetEmploye(Employe employe);
-=======
->>>>>>> fix
         List<Employe> GetPostulationEmployeesByOffre(Offre offre);
 
         /**
