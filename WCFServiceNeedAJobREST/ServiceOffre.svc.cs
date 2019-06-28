@@ -15,32 +15,35 @@ namespace WCFServiceNeedAJobREST
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class ServiceOffre : IServiceOffre
     {
-        private IService service;
+        private IService service = new Service.Service();
         public List<OffreDTO> GetOffre()
         {
-            //service = new Service.Service();
-            //List<Offre> offresBdd = service.GetAllOffre();
-            //List<OffreDto> offres = new List<OffreDto>();
-            //foreach(Offre offre in offresBdd)
-            //{
-            //    OffreDto offreDto = new OffreDto();
-            //    offreDto.IdOffre = offre.IdOffre;
-            //    offreDto.IdStatutOffre = offre.IdStatutOffre;
-            //    offreDto.IntituleOffre = offre.IntituleOffre;
-            //    offreDto.ResponsableOffre = offre.ResponsableOffre;
-            //    offreDto.SalaireOffre = offre.SalaireOffre;
-            //    offres.Add(offreDto);
-            //}
-            //return offres;
-            List<OffreDTO> tests = new List<OffreDTO>();
-            OffreDTO offre = new OffreDTO();
-            offre.idOffre = 1;
-            offre.idStatutOffre = 1;
-            offre.intituleOffre = "test";
-            offre.responsableOffre = "test";
-            offre.salaireOffre = 1;
-            tests.Add(offre);
-            return tests;
+            try
+            {
+                List<Offre> offresBdd = service.GetAllOffre();
+                List<OffreDTO> offres = new List<OffreDTO>();
+                foreach (Offre offre in offresBdd)
+                {
+                    OffreDTO offreDto = new OffreDTO
+                    {
+                        IdOffre = offre.IdOffre,
+                        IdStatutOffre = offre.IdStatutOffre,
+                        IntituleOffre = offre.IntituleOffre,
+                        ResponsableOffre = offre.ResponsableOffre,
+                        SalaireOffre = offre.SalaireOffre,
+                        DateOffre = offre.DateOffre,
+                        DescriptionOffre = offre.DescriptionOffre
+                    };
+                    offres.Add(offreDto);
+                }
+
+                return offres;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
         }
 
         // Todo : Faire le post : 
