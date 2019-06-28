@@ -1,6 +1,7 @@
 ﻿using biblio.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace wpfNeadAJob.ViewModels
         private string responsableOffre;
         private Offre offre;
         private Service.IService service = new Service.Service();
+
+        private ObservableCollection<ListEmployeeViewModel> _employees;
         #endregion
 
         #region Constructeurs
@@ -28,6 +31,15 @@ namespace wpfNeadAJob.ViewModels
             this.salaireOffre = offre.SalaireOffre;
             this.descriptionOffre = offre.DescriptionOffre;
             this.responsableOffre = offre.ResponsableOffre;
+
+            this._employees = new ObservableCollection<ListEmployeeViewModel>();
+
+            foreach (Employe e in service.GetPostulationEmployeesByOffre(offre))
+            {
+                _employees.Add(new ListEmployeeViewModel(e));
+            }
+
+
 
         }
         #endregion
@@ -70,6 +82,16 @@ namespace wpfNeadAJob.ViewModels
             set {
                 this.offre.ResponsableOffre = value;
                 this.service.UpdateOffre(this.offre);
+            }
+        }
+
+        public ObservableCollection<ListEmployeeViewModel> Employees
+        {
+            get { return _employees; }
+            set
+            {
+                _employees = value;
+                OnPropertyChanged("Employees");
             }
         }
         #endregion

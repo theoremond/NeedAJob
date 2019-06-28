@@ -40,7 +40,6 @@ namespace wpfNeadAJob.ViewModels
             if (_offres != null && _offres.Count > 0)
             {
                 _selectedOffre = _offres.ElementAt(0);
-                ListEmployeeViewModel listEmp = new ListEmployeeViewModel(_selectedOffre.GetOffre());
             }
         }
 

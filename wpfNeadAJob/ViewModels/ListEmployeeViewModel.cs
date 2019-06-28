@@ -13,35 +13,82 @@ namespace wpfNeadAJob.ViewModels
     public class ListEmployeeViewModel : BaseViewModel
     {
         #region Variables
-        private ObservableCollection<Employe> _employees;
+        private int idEmploye;
+        private string nomEmploye;
+        private string prenomEmploye;
+        private DateTime dateDeNaissanceEmploye;
+        private int ancienneteEmploye;
+        private string biographieEmploye;
+
         #endregion
 
         #region Constructeurs
-        public ListEmployeeViewModel(Offre offre)
+        public ListEmployeeViewModel(Employe employe)
         {
             IService service = new Service.Service();
-
-            this._employees = new ObservableCollection<Employe>();
-
-            // on appelle le mock pour initialiser une liste de produits
-            foreach (Employe e in service.GetPostulationEmployeesByOffre(offre))
-            {
-                Employees.Add(e);
-            }
-            OnPropertyChanged("Employees");
-        }
+            idEmploye = employe.IdEmploye;
+            nomEmploye = employe.NomEmploye; ;
+            prenomEmploye = employe.PrenomEmploye; ;
+            dateDeNaissanceEmploye = employe.DateDeNaissanceEmploye;
+            ancienneteEmploye = employe.AncienneteEmploye;
+            biographieEmploye = employe.BiographieEmploye;
+        }   
 
         #endregion
 
         #region  Data Bindings
-
-        public ObservableCollection<Employe> Employees
+        public int IdEmploye
         {
-            get { return _employees; }
+            get { return this.idEmploye; }
             set
             {
-                _employees = value;
-                OnPropertyChanged("Employees");
+                this.idEmploye = value;
+                OnPropertyChanged("IdEmploye");
+            }
+        }
+        public string NomEmploye
+        {
+            get { return this.nomEmploye; }
+            set
+            {
+                this.nomEmploye = value;
+                OnPropertyChanged("NomEmploye");
+            }
+        }
+        public string PrenomEmploye
+        {
+            get { return this.prenomEmploye; }
+            set
+            {
+                this.prenomEmploye = value;
+                OnPropertyChanged("PrenomEmploye");
+            }
+        }
+        public DateTime DateDeNaissanceEmploye
+        {
+            get { return this.dateDeNaissanceEmploye; }
+            set
+            {
+                this.dateDeNaissanceEmploye = value;
+                OnPropertyChanged("DateDeNaissanceEmploye");
+            }
+        }
+        public int AncienneteEmploye
+        {
+            get { return this.ancienneteEmploye; }
+            set
+            {
+                this.ancienneteEmploye = value;
+                OnPropertyChanged("AncienneteEmploye");
+            }
+        }
+        public string BiographieEmploye
+        {
+            get { return this.biographieEmploye; }
+            set
+            {
+                this.biographieEmploye = value;
+                OnPropertyChanged("BiographieEmploye");
             }
         }
         #endregion
