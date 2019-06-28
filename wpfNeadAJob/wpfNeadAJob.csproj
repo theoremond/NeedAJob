@@ -76,9 +76,6 @@
     <Compile Include="Views\ListOffre.xaml.cs">
       <DependentUpon>ListOffre.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Operation.xaml.cs">
-      <DependentUpon>Operation.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,10 +97,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ListOffre.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Operation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
