@@ -1,0 +1,90 @@
+﻿@model ASPNETNeedAJob.Models.OffreViewModel
+
+<div>
+    <h4>Offre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idOffre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idOffre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intituleOffre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intituleOffre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOffre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOffre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salaireOffre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salaireOffre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descriptionOffre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descriptionOffre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idStatutOffre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idStatutOffre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.responsableOffre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.responsableOffre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Postuler", "AjouterPostulationOffre", new { id = Model.idOffre})*@
+    <a id="postulation" data-idoffre="@Model.idOffre">Postuler</a>&nbsp;|
+    @Html.ActionLink("Back to List", "ListeOffres")
+</p>
+
+<script type="text/javascript">
+    $( document ).ready(function () {
+        $('#postulation').on('click', function () {
+            const idOffre = $('#postulation').data('idoffre');
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("PostulerOffre", "Offre")',
+                data: { "idOffre": idOffre, "idEmploye": 1 },
+                success: function () {
+                    alert("Votre postulation a bien été enregistrer.")
+                    $('#postulation').hide();
+                },
+                error: function (error) {
+                    alert("erreur : " + error);
+                },
+                dataType: "json"
+            });
+        });
+    });
+</script>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ASPNETNeedAJob.Models.PostulationViewModel>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idOffrePostulation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idEmployePostulation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datePostulation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statutPostulation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idOffrePostulation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idEmployePostulation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datePostulation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.statutPostulation)
+        </td>
+    </tr>
+}
+
+</table>

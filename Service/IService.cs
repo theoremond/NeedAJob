@@ -16,8 +16,12 @@ namespace Service
         void DeleteEmploye(Employe employe);
         void UpdateEmploye(Employe employe);
         List<Employe> GetAllEmploye();
+<<<<<<< jalon3
         Employe GetEmploye(Employe employe);
+=======
+>>>>>>> fix
         List<Employe> GetPostulationEmployeesByOffre(Offre offre);
+
         /**
          * Experience 
          */
@@ -41,6 +45,8 @@ namespace Service
         void DeleteOffre(Offre offre);
         void UpdateOffre(Offre offre);
         List<Offre> GetAllOffre();
+        Offre GetOffreById(int idOffre);
+        List<Offre> GetOffresRecherche(String recherche);
 
         /**
          * Postulation 

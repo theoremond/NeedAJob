@@ -477,8 +477,12 @@ namespace Service
     
         #endregion
 
+<<<<<<< jalon3
         #region Statut
         public void AddStatut(Statut statut)
+=======
+        public Employe GetEmploye(Employe employe)
+>>>>>>> fix
         {
             try
             {
@@ -523,7 +527,13 @@ namespace Service
             }
         }
 
+<<<<<<< jalon3
         public List<Statut> GetAllStatut()
+=======
+
+
+        public Offre GetOffreById(int idOffre)
+>>>>>>> fix
         {
             try
             {
@@ -534,6 +544,21 @@ namespace Service
                 throw e;
             }
         }
+
+        public List<Offre> GetOffresRecherche(string recherche)
+        {
+            try
+            {
+                return DbContext.Offres.Where(o =>
+                    o.IntituleOffre.Contains(recherche) ||
+                    o.ResponsableOffre.Contains(recherche)
+                ).ToList();
+            } catch (Exception e)
+            {
+                throw e;
+            }
+        }
+<<<<<<< jalon3
 
         public void UpdateStatut(Statut statut)
         {
@@ -554,5 +579,7 @@ namespace Service
         }
 
         #endregion
+=======
+>>>>>>> fix
     }
 }
